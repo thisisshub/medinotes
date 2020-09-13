@@ -20,11 +20,19 @@
     <div>
     <nav id="nav">
         <ul>
-            <ul>
-            <li><a class="navbar-elements" href="">HOME</li>
-            <li><a class="navbar-elements" href="">ABOUT</li>
-            <li><a class="navbar-elements" href="" >SYLLABUS</a></li>
-        </ul>
+            <li><a class="navbar-elements" href="{% url 'home' %}">HOME</li>  
+                <li><a class="navbar-elements" href="">ABOUT</li>  
+                <li><a class="navbar-elements" href="" >SYLLABUS</a></li>
+                {% if user.is_authenticated %}
+                    <li><a class="navbar-elements" href="">PROFILE</a></li>
+                    <li><a class="navbar-elements" href="">FILTER</li>  
+                    <li><a class="navbar-elements" href="" >UPLOAD</a></li>
+                    <li><a class="navbar-elements" href="{% url 'logout' %}" >LOGOUT</a></li>
+                {% else %}
+                    <li><a class="navbar-elements" href="signup" >SIGNUP</a></li>
+                    <li><a class="navbar-elements" href="{% url 'login' %}" >LOGIN</a></li>
+                {% endif %}        
+            </ul>
     </nav>
     </div>
     <div class="container">
