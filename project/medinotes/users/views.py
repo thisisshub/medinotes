@@ -8,5 +8,5 @@ class HomePageView(TemplateView):
 
     def homepage(self, request, template):
         """Display the first homepage of website."""
-        self.template = self.template_name
-        return render(request, template_name=self.template_name)
+        template = self.template_name
+        return render(request, template_name=template)
