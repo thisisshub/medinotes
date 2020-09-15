@@ -33,6 +33,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.github',
     'django_secrets',
+    'crispy_forms',
+    'django_filters',
+    'notes',
     'users',
 ]
 
